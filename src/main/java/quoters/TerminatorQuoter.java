@@ -17,11 +17,12 @@ public class TerminatorQuoter implements Quoter {
     public void init() {
         System.out.println("Phase 2");
         System.out.println("init() repeat = " + repeat);
-
+        System.out.println();
     }
 
     public TerminatorQuoter() {
         System.out.println("Phase 1, constructor, repeat = " + repeat);
+        System.out.println();
     }
 
     public void setMessage(String message) {
@@ -30,7 +31,10 @@ public class TerminatorQuoter implements Quoter {
 
 
     @Override
+    @PostProxy
     public void sayQuote() {
+        System.out.println("3 Phase");
+        System.out.println();
         for (int i = 0; i < repeat; i++) {
         System.out.println("message = " + message);
         }
