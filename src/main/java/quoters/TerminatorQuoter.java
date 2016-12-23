@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
  * Created by Serzh on 10/29/16.
  */
 @Profiling
+@DeprecatedCalss(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 2, max = 7)
@@ -38,5 +39,9 @@ public class TerminatorQuoter implements Quoter {
         for (int i = 0; i < repeat; i++) {
         System.out.println("message = " + message);
         }
+    }
+
+    public void setRepeat(int repeat) {
+        this.repeat = repeat;
     }
 }
